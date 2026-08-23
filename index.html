@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pool Party Hawaiano · Andrea cumple 19</title>
+<meta name="description" content="Invitacion al cumpleanos numero 19 de Andrea Teresen Rodriguez - Pool Party Hawaiano">
+<meta name="theme-color" content="#00b4d8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌺</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Baloo+2:wght@400;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   POOL PARTY HAWAIANO - Andrea 19
+   Todo el estilo vive aqui. Cambia las variables de :root
+   si quieres otra paleta de colores.
+   ============================================================ */
+:root{
+  --agua-clara:#caf0f8;
+  --agua:#90e0ef;
+  --agua-media:#48cae4;
+  --agua-fuerte:#00b4d8;
+  --mar:#0077b6;
+  --mar-hondo:#023e8a;
+  --coral:#ff5d8f;
+  --coral-suave:#ff8fab;
+  --mango:#ffa62b;
+  --sol:#ffd166;
+  --hoja:#06d6a0;
+  --hoja-oscura:#118a6e;
+  --arena:#fff6e9;
+  --tinta:#083344;
+  --tinta-suave:#3d6472;
+  --blanco:#ffffff;
+  --sombra:0 18px 45px -18px rgba(2,62,138,.45);
+  --sombra-suave:0 8px 24px -12px rgba(2,62,138,.35);
+  --radio:26px;
+  --tipo-titulo:"Pacifico","Baloo 2",cursive;
+  --tipo-display:"Baloo 2",system-ui,sans-serif;
+  --tipo-texto:"Montserrat",system-ui,-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:var(--tipo-texto);
+  color:var(--tinta);
+  background:linear-gradient(180deg,#7ee8fa 0%,#48cae4 22%,#00b4d8 48%,#0096c7 72%,#0077b6 100%);
+  background-attachment:fixed;
+  min-height:100vh;
+  overflow-x:hidden;
+  line-height:1.6;
+}
+img{max-width:100%;display:block;}
+button{font-family:inherit;cursor:pointer;border:none;}
+input,select,textarea{font-family:inherit;font-size:1rem;}
+a{color:var(--mar);}
+
+/* ---------- Decoracion de fondo ---------- */
+.sol{
+  position:fixed;top:-90px;right:-70px;width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#fff5b8,var(--sol) 45%,#ffb703 75%);
+  filter:blur(2px);opacity:.85;z-index:0;pointer-events:none;
+  animation:latir 7s ease-in-out infinite;
+}
+@keyframes latir{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.hoja{position:fixed;z-index:1;pointer-events:none;font-size:clamp(80px,18vw,170px);line-height:1;opacity:.9;filter:drop-shadow(0 10px 18px rgba(0,60,90,.25));}
+.hoja-1{top:-26px;left:-34px;animation:mecer 6s ease-in-out infinite;}
+.hoja-2{top:-40px;right:-30px;animation:mecer2 7.5s ease-in-out infinite .4s;}
+@keyframes mecer{0%,100%{transform:rotate(18deg) translateY(0)}50%{transform:rotate(10deg) translateY(8px)}}
+@keyframes mecer2{0%,100%{transform:rotate(-30deg) scaleX(-1) translateY(0)}50%{transform:rotate(-20deg) scaleX(-1) translateY(10px)}}
+.flotantes{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:1;}
+.flotante{position:absolute;bottom:-80px;font-size:26px;opacity:.75;animation:subir linear infinite;}
+@keyframes subir{
+  0%{transform:translateY(0) rotate(0deg);opacity:0}
+  10%{opacity:.8}
+  90%{opacity:.8}
+  100%{transform:translateY(-115vh) rotate(320deg);opacity:0}
+}
+@media (prefers-reduced-motion: reduce){
+  .flotantes{display:none}
+  *{animation-duration:.01ms !important;animation-iteration-count:1 !important}
+}
+
+/* ---------- Layout ---------- */
+.envoltura{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:22px 16px 60px;}
+.tarjeta{
+  background:var(--blanco);
+  border-radius:var(--radio);
+  box-shadow:var(--sombra);
+  padding:26px 22px;
+  margin-bottom:20px;
+  position:relative;
+  overflow:hidden;
+}
+.tarjeta::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--coral),var(--mango),var(--sol),var(--hoja),var(--agua-fuerte));
+}
+.titulo-seccion{
+  font-family:var(--tipo-display);font-weight:800;font-size:1.35rem;margin:0 0 14px;
+  display:flex;align-items:center;gap:10px;color:var(--mar-hondo);
+}
+.titulo-seccion .emo{font-size:1.5rem;}
+
+/* ---------- Portada ---------- */
+.portada{
+  text-align:center;
+  background:radial-gradient(120% 90% at 50% -20%,#ffffff 0%,#f2fdff 45%,#e2f8ff 100%);
+  padding:34px 22px 30px;
+}
+.cinta{
+  display:inline-block;background:linear-gradient(90deg,var(--coral),var(--mango));
+  color:#fff;font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:7px 16px;border-radius:999px;box-shadow:var(--sombra-suave);
+}
+.saludo{margin:16px 0 2px;font-size:.95rem;color:var(--tinta-suave);font-weight:600;}
+.nombre{
+  font-family:var(--tipo-titulo);
+  font-size:clamp(2.3rem,10vw,3.9rem);
+  line-height:1.05;margin:6px 0 2px;
+  background:linear-gradient(120deg,var(--coral) 0%,var(--mango) 45%,var(--agua-fuerte) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  padding-bottom:6px;
+}
+.edad-caja{display:flex;align-items:center;justify-content:center;gap:14px;margin:10px 0 4px;}
+.edad{
+  font-family:var(--tipo-display);font-weight:800;font-size:clamp(3.4rem,18vw,6rem);line-height:.9;
+  color:var(--mar);text-shadow:4px 4px 0 var(--sol),8px 8px 0 rgba(255,93,143,.35);
+}
+.edad-txt{font-family:var(--tipo-display);font-weight:700;font-size:1.1rem;color:var(--tinta-suave);text-align:left;}
+.tema{
+  margin:16px auto 0;max-width:420px;font-family:var(--tipo-display);font-weight:700;
+  font-size:1.15rem;color:var(--hoja-oscura);
+}
+.linea-emos{font-size:1.6rem;letter-spacing:.25em;margin-top:10px;}
+
+/* ---------- Cuenta regresiva ---------- */
+.regresiva{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:22px;}
+.reloj{
+  background:linear-gradient(160deg,var(--agua-fuerte),var(--mar));
+  color:#fff;border-radius:16px;padding:12px 4px;box-shadow:var(--sombra-suave);
+}
+.reloj b{display:block;font-family:var(--tipo-display);font-size:clamp(1.4rem,7vw,2.1rem);line-height:1;font-weight:800;}
+.reloj span{display:block;font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;opacity:.9;margin-top:4px;}
+
+/* ---------- Datos ---------- */
+.datos{display:grid;gap:12px;}
+@media(min-width:620px){.datos{grid-template-columns:1fr 1fr;}}
+.dato{
+  display:flex;gap:12px;align-items:flex-start;
+  background:var(--arena);border-radius:18px;padding:14px 16px;border:2px dashed rgba(255,166,43,.35);
+}
+.dato .ico{font-size:1.6rem;line-height:1;}
+.dato h4{margin:0 0 2px;font-family:var(--tipo-display);font-size:1rem;color:var(--mar-hondo);}
+.dato p{margin:0;font-size:.9rem;color:var(--tinta-suave);}
+.dato p strong{color:var(--tinta);}
+
+/* ---------- QR / ubicacion ---------- */
+.mapa{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;}
+@media(min-width:620px){.mapa{flex-direction:row;text-align:left;align-items:center;}}
+.qr-marco{
+  background:#fff;padding:12px;border-radius:20px;box-shadow:var(--sombra-suave);
+  border:3px solid var(--agua);flex:none;
+}
+#qrUbicacion{display:block;width:190px;height:190px;image-rendering:pixelated;}
+.coords{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9rem;
+  background:var(--agua-clara);color:var(--mar-hondo);padding:8px 12px;border-radius:10px;
+  display:inline-block;margin:6px 0 12px;font-weight:600;
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 22px;border-radius:999px;font-weight:700;font-size:.95rem;
+  text-decoration:none;transition:transform .15s ease,box-shadow .15s ease,filter .15s ease;
+  box-shadow:var(--sombra-suave);
+}
+.btn:active{transform:scale(.97);}
+.btn:hover{filter:brightness(1.05);transform:translateY(-2px);}
+.btn-mar{background:linear-gradient(135deg,var(--agua-fuerte),var(--mar));color:#fff;}
+.btn-coral{background:linear-gradient(135deg,var(--coral),var(--mango));color:#fff;}
+.btn-hoja{background:linear-gradient(135deg,var(--hoja),var(--hoja-oscura));color:#fff;}
+.btn-fantasma{background:#fff;color:var(--mar);border:2px solid var(--agua-media);box-shadow:none;}
+.btn-chico{padding:8px 14px;font-size:.8rem;}
+.btn[disabled]{opacity:.5;pointer-events:none;}
+
+/* ---------- Lista de cosas ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.chip{background:var(--agua-clara);color:var(--mar-hondo);border-radius:999px;padding:7px 14px;font-size:.85rem;font-weight:600;}
+
+/* ---------- RSVP ---------- */
+.rsvp{background:linear-gradient(165deg,#fff 0%,#fff9ef 100%);}
+.hola{font-family:var(--tipo-display);font-size:1.5rem;font-weight:800;color:var(--mar-hondo);margin:0 0 4px;}
+.cupos{font-size:.9rem;color:var(--tinta-suave);margin:0 0 16px;}
+.cupos b{color:var(--coral);}
+.opciones{display:grid;gap:10px;grid-template-columns:1fr 1fr;margin-bottom:16px;}
+.op{
+  border:3px solid #e6eef2;background:#fff;border-radius:18px;padding:16px 10px;text-align:center;
+  font-weight:700;font-size:.9rem;color:var(--tinta-suave);transition:all .18s ease;
+}
+.op .cara{display:block;font-size:1.9rem;margin-bottom:4px;}
+.op.activo-si{border-color:var(--hoja);background:#e8fff7;color:var(--hoja-oscura);box-shadow:0 0 0 4px rgba(6,214,160,.15);}
+.op.activo-no{border-color:var(--coral);background:#fff0f4;color:#c9184a;box-shadow:0 0 0 4px rgba(255,93,143,.15);}
+.campo{margin-bottom:14px;}
+.campo label{display:block;font-size:.82rem;font-weight:700;color:var(--tinta-suave);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em;}
+.campo select,.campo input,.campo textarea{
+  width:100%;padding:12px 14px;border-radius:14px;border:2px solid #e0eaf0;background:#fff;color:var(--tinta);
+}
+.campo select:focus,.campo input:focus,.campo textarea:focus{outline:none;border-color:var(--agua-fuerte);box-shadow:0 0 0 4px rgba(0,180,216,.15);}
+.campo textarea{resize:vertical;min-height:78px;}
+.oculto{display:none !important;}
+.aviso{
+  margin-top:14px;padding:14px 16px;border-radius:16px;font-size:.9rem;font-weight:600;
+  display:flex;gap:10px;align-items:flex-start;
+}
+.aviso-ok{background:#e8fff7;color:var(--hoja-oscura);border:2px solid rgba(6,214,160,.4);}
+.aviso-no{background:#fff0f4;color:#c9184a;border:2px solid rgba(255,93,143,.4);}
+.aviso-info{background:var(--agua-clara);color:var(--mar-hondo);border:2px solid rgba(0,180,216,.35);}
+
+/* ---------- Selector de invitado ---------- */
+.buscador input{width:100%;padding:14px 16px;border-radius:16px;border:2px solid #e0eaf0;}
+.lista-nombres{list-style:none;margin:12px 0 0;padding:0;max-height:340px;overflow-y:auto;}
+.lista-nombres li{margin-bottom:8px;}
+.lista-nombres button{
+  width:100%;text-align:left;padding:13px 16px;border-radius:14px;background:var(--arena);
+  border:2px solid transparent;font-weight:600;color:var(--tinta);display:flex;justify-content:space-between;align-items:center;gap:10px;
+}
+.lista-nombres button:hover{border-color:var(--mango);background:#fff3e0;}
+.lista-nombres small{color:var(--tinta-suave);font-weight:600;font-size:.75rem;}
+
+/* ---------- Pie ---------- */
+.pie{text-align:center;color:#e6faff;font-size:.85rem;padding:10px 0 0;text-shadow:0 1px 3px rgba(0,60,90,.35);}
+.pie a{color:#fff;font-weight:700;}
+
+/* ---------- PANEL ADMIN ---------- */
+.panel{max-width:1080px;}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.tab{padding:9px 16px;border-radius:999px;background:#fff;border:2px solid #dceaf1;font-weight:700;font-size:.85rem;color:var(--tinta-suave);}
+.tab.on{background:var(--mar);border-color:var(--mar);color:#fff;}
+.metricas{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:18px;}
+.metrica{background:linear-gradient(160deg,#fff,#f3fbff);border:2px solid #e2f1f8;border-radius:18px;padding:14px;text-align:center;}
+.metrica b{display:block;font-family:var(--tipo-display);font-size:1.9rem;line-height:1;color:var(--mar);}
+.metrica span{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--tinta-suave);font-weight:700;}
+.tabla-wrap{overflow-x:auto;border-radius:16px;border:2px solid #e6f2f7;}
+table{width:100%;border-collapse:collapse;font-size:.85rem;min-width:700px;background:#fff;}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #eef5f8;vertical-align:middle;}
+th{background:#f4fbfe;font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:var(--tinta-suave);}
+tr:last-child td{border-bottom:none;}
+.pill{display:inline-block;padding:4px 10px;border-radius:999px;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;}
+.pill-si{background:#d7fff1;color:var(--hoja-oscura);}
+.pill-no{background:#ffe1ea;color:#c9184a;}
+.pill-pend{background:#fff0d6;color:#a15c00;}
+.acciones{display:flex;gap:6px;flex-wrap:wrap;}
+.mini{padding:6px 10px;border-radius:10px;font-size:.72rem;font-weight:700;background:#eef7fb;color:var(--mar);border:1px solid #d5e9f2;}
+.mini:hover{background:var(--mar);color:#fff;}
+.nota{font-size:.82rem;color:var(--tinta-suave);background:#f6fbfd;border-left:4px solid var(--agua-media);padding:10px 14px;border-radius:0 12px 12px 0;margin:12px 0;}
+.editor textarea{width:100%;min-height:240px;font-family:ui-monospace,Menlo,monospace;font-size:.85rem;padding:14px;border-radius:14px;border:2px solid #e0eaf0;line-height:1.7;}
+.fila-btn{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+
+/* ---------- Modal / toast ---------- */
+.modal{position:fixed;inset:0;background:rgba(2,62,138,.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:20px;z-index:50;}
+.modal-caja{background:#fff;border-radius:24px;padding:24px;max-width:380px;width:100%;text-align:center;box-shadow:var(--sombra);}
+.modal-caja h3{font-family:var(--tipo-display);margin:0 0 6px;color:var(--mar-hondo);}
+.modal-caja canvas{margin:12px auto;border:3px solid var(--agua);border-radius:16px;padding:8px;background:#fff;width:220px;height:220px;image-rendering:pixelated;}
+.toast{
+  position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(160%);
+  background:var(--tinta);color:#fff;padding:12px 22px;border-radius:999px;font-weight:700;font-size:.88rem;
+  z-index:80;transition:transform .3s ease,opacity .3s ease;box-shadow:var(--sombra);
+  opacity:0;pointer-events:none;
+}
+.toast.ver{transform:translateX(-50%) translateY(0);opacity:1;}
+@media print{.no-print{display:none !important}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<!-- ====== DECORACION DE FONDO ====== -->
+<div class="sol" aria-hidden="true"></div>
+<div class="hoja hoja-1" aria-hidden="true">🌴</div>
+<div class="hoja hoja-2" aria-hidden="true">🌴</div>
+<div class="flotantes" id="flotantes" aria-hidden="true"></div>
+
+<!-- ============================================================
+     VISTA 1: LA INVITACION
+     ============================================================ -->
+<main class="envoltura" id="vistaInvitacion">
+
+  <!-- ---------- Portada ---------- -->
+  <section class="tarjeta portada">
+    <span class="cinta">Estas invitad@ 🌺</span>
+    <p class="saludo">Nos vamos de <b>Pool Party</b>, porque cumple años</p>
+    <h1 class="nombre" id="txtNombre">Andrea Teresen Rodríguez</h1>
+    <div class="edad-caja">
+      <div class="edad" id="txtEdad">19</div>
+      <div class="edad-txt">años<br><span style="font-size:.8rem;font-weight:600">de puro flow 🩵</span></div>
+    </div>
+    <p class="tema">🏝️ Pool Party Hawaiano 🏝️<br><span style="font-size:.9rem;color:var(--tinta-suave);font-weight:600">Piscina, música, sol y mucho flow</span></p>
+    <div class="linea-emos" aria-hidden="true">🌺🍍🩴🥥🦩</div>
+
+    <div class="regresiva" id="regresiva">
+      <div class="reloj"><b id="cDias">--</b><span>Días</span></div>
+      <div class="reloj"><b id="cHoras">--</b><span>Horas</span></div>
+      <div class="reloj"><b id="cMin">--</b><span>Min</span></div>
+      <div class="reloj"><b id="cSeg">--</b><span>Seg</span></div>
+    </div>
+    <p id="msgRegresiva" style="margin:12px 0 0;font-weight:700;color:var(--coral)"></p>
+  </section>
+
+  <!-- ---------- Datos del evento ---------- -->
+  <section class="tarjeta">
+    <h2 class="titulo-seccion"><span class="emo">📅</span> Los detalles</h2>
+    <div class="datos">
+      <div class="dato">
+        <span class="ico">🗓️</span>
+        <div><h4>Fecha</h4><p id="txtFecha">Domingo 20 de septiembre</p></div>
+      </div>
+      <div class="dato">
+        <span class="ico">🕒</span>
+        <div><h4>Hora</h4><p id="txtHora">2:00 PM</p></div>
+      </div>
+      <div class="dato">
+        <span class="ico">👙</span>
+        <div><h4>Dress code</h4><p id="txtDress">Traje de baño + outfit caribeño</p></div>
+      </div>
+      <div class="dato">
+        <span class="ico">📍</span>
+        <div><h4>Lugar</h4><p id="txtLugar">La piscina</p></div>
+      </div>
+    </div>
+    <h4 style="font-family:var(--tipo-display);margin:20px 0 0;color:var(--mar-hondo)">No olvides traer 🎒</h4>
+    <div class="chips" id="chipsTraer"></div>
+  </section>
+
+  <!-- ---------- Ubicacion + QR ---------- -->
+  <section class="tarjeta">
+    <h2 class="titulo-seccion"><span class="emo">🗺️</span> Cómo llegar</h2>
+    <div class="mapa">
+      <div class="qr-marco">
+        <canvas id="qrUbicacion" width="190" height="190" role="img" aria-label="Código QR con la ubicación de la fiesta"></canvas>
+      </div>
+      <div>
+        <p style="margin:0 0 4px;font-weight:600">Escanea el QR con la cámara de tu celular y te lleva directo al punto:</p>
+        <div class="coords" id="txtCoords">18°31'05.1"N 69°51'04.6"W</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn-mar" id="btnMaps" href="#" target="_blank" rel="noopener">📍 Abrir en Google Maps</a>
+          <a class="btn btn-fantasma" id="btnWaze" href="#" target="_blank" rel="noopener">🚗 Waze</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- RSVP ---------- -->
+  <section class="tarjeta rsvp" id="bloqueRsvp">
+
+    <!-- Paso A: elegir quien eres -->
+    <div id="pasoBuscar">
+      <h2 class="titulo-seccion"><span class="emo">🔎</span> ¿Quién eres?</h2>
+      <div class="aviso aviso-info limite" style="margin:0 0 14px"><span>⏳</span><div></div></div>
+      <p style="margin:0 0 12px;color:var(--tinta-suave);font-size:.92rem">Busca tu nombre en la lista para confirmar tu asistencia.</p>
+      <div class="buscador">
+        <input type="search" id="inpBuscar" placeholder="Escribe tu nombre..." autocomplete="off">
+      </div>
+      <ul class="lista-nombres" id="listaNombres"></ul>
+      <p style="font-size:.82rem;color:var(--tinta-suave);margin-top:14px">
+        ¿No apareces en la lista? Escríbele a la anfitriona por
+        <a id="linkAyuda" href="#" target="_blank" rel="noopener">WhatsApp</a>.
+      </p>
+    </div>
+
+    <!-- Paso B: formulario de confirmacion -->
+    <div id="pasoForm" class="oculto">
+      <h2 class="titulo-seccion"><span class="emo">🎟️</span> Confirma tu asistencia</h2>
+      <p class="hola" id="txtHola">¡Hola!</p>
+      <p class="cupos" id="txtCupos"></p>
+      <div class="aviso aviso-info limite" style="margin:0 0 16px"><span>⏳</span><div></div></div>
+
+      <div class="opciones">
+        <button type="button" class="op" id="opSi" data-valor="si">
+          <span class="cara">🏖️</span> ¡Claro que voy!
+        </button>
+        <button type="button" class="op" id="opNo" data-valor="no">
+          <span class="cara">😢</span> No podré ir
+        </button>
+      </div>
+
+      <div id="detalleSi" class="oculto">
+        <div class="campo">
+          <label for="selCantidad">¿Cuántos van (incluyéndote)?</label>
+          <select id="selCantidad"></select>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="inpMensaje">Mensaje para Andrea (opcional)</label>
+        <textarea id="inpMensaje" placeholder="Escríbele algo lindo o alguna nota (alergias, llego tarde, etc.)"></textarea>
+      </div>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-hoja" id="btnEnviar" disabled>✅ Enviar mi respuesta</button>
+        <button class="btn btn-fantasma" id="btnOtro">↩︎ No soy yo</button>
+      </div>
+
+      <div id="avisoRsvp" class="aviso oculto"></div>
+    </div>
+
+    <!-- Paso C: ya respondio -->
+    <div id="pasoListo" class="oculto">
+      <h2 class="titulo-seccion"><span class="emo">🎉</span> ¡Listo!</h2>
+      <div id="resumenRsvp"></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+        <a class="btn btn-hoja" id="btnWhats" href="#" target="_blank" rel="noopener">💬 Avisar por WhatsApp</a>
+        <a class="btn btn-fantasma" id="btnAgenda" href="#" download="cumple-andrea.ics">📆 Agendar</a>
+        <button class="btn btn-fantasma" id="btnCambiar">✏️ Cambiar respuesta</button>
+      </div>
+    </div>
+  </section>
+
+  <p class="pie no-print">
+    Hecho por <b id="pieCredito">LMSP</b>
+  </p>
+</main>
+
+<!-- ============================================================
+     VISTA 2: PANEL DEL ANFITRION
+     ============================================================ -->
+<main class="envoltura panel oculto" id="vistaPanel">
+  <section class="tarjeta">
+    <h2 class="titulo-seccion"><span class="emo">🧑‍💼</span> Panel del anfitrión</h2>
+    <div class="tabs">
+      <button class="tab on" data-tab="resumen">📊 Resumen</button>
+      <button class="tab" data-tab="lista">👥 Invitados</button>
+      <button class="tab" data-tab="editar">✏️ Editar lista</button>
+      <button class="tab" data-tab="ajustes">⚙️ Datos del evento</button>
+    </div>
+
+    <!-- Resumen -->
+    <div id="tabResumen">
+      <div class="metricas" id="metricas"></div>
+      <div class="nota">
+        Las respuestas se guardan en <b>este navegador</b> y además te llegan por WhatsApp.
+        Si configuras un <code>webhookUrl</code> (Google Apps Script) en el código, también se envían allá.
+        Usa <b>Exportar CSV</b> para respaldar.
+      </div>
+      <div class="fila-btn">
+        <button class="btn btn-mar btn-chico" id="btnCsv">⬇️ Exportar CSV</button>
+        <button class="btn btn-fantasma btn-chico" id="btnCopiarTodos">🔗 Copiar todos los links</button>
+        <button class="btn btn-fantasma btn-chico" id="btnQrGeneral">📷 QR de la invitación</button>
+        <button class="btn btn-fantasma btn-chico" id="btnBorrarResp">🗑️ Borrar respuestas</button>
+      </div>
+    </div>
+
+    <!-- Lista -->
+    <div id="tabLista" class="oculto">
+      <div class="tabla-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Invitado</th><th>Cupos</th><th>Estado</th><th>Van</th><th>Mensaje</th><th>Acciones</th></tr>
+          </thead>
+          <tbody id="tbodyInvitados"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Editar lista -->
+    <div id="tabEditar" class="oculto editor">
+      <p style="margin:0 0 8px;font-size:.9rem;color:var(--tinta-suave)">
+        Un invitado por línea. Formato: <b>Nombre , cupos , teléfono</b><br>
+        Los cupos y el teléfono son opcionales (por defecto 1 cupo).
+      </p>
+      <textarea id="txtLista" spellcheck="false"></textarea>
+      <div class="fila-btn">
+        <button class="btn btn-hoja btn-chico" id="btnGuardarLista">💾 Guardar lista</button>
+        <button class="btn btn-fantasma btn-chico" id="btnCodigo">📋 Copiar código para index.html</button>
+        <button class="btn btn-fantasma btn-chico" id="btnRestaurar">↺ Volver a la lista del archivo</button>
+      </div>
+      <div class="nota">
+        <b>Importante:</b> guardar aquí solo cambia <i>tu</i> navegador. Para que todos los invitados
+        vean la lista nueva, pulsa <b>Copiar código</b> y pega ese bloque dentro de
+        <code>const INVITADOS = [...]</code> en el archivo <code>index.html</code>.
+      </div>
+    </div>
+
+    <!-- Ajustes -->
+    <div id="tabAjustes" class="oculto">
+      <div class="nota">Estos datos se editan directamente en el bloque <code>const CONFIG</code> al inicio del script de <code>index.html</code>. Aquí solo los ves para verificar.</div>
+      <div class="tabla-wrap">
+        <table><tbody id="tbodyConfig"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <p class="pie no-print"><a href="#" id="linkVolver">← Volver a la invitación</a></p>
+</main>
+
+<div class="toast" id="toast"></div>
+<div id="contModal"></div>
+
+<script>
+/* ============================================================================
+   1) GENERADOR DE CODIGOS QR  (JS puro, sin librerias, funciona sin internet)
+      Modo byte, nivel de correccion M, versiones 1 a 10.
+      Uso:  QR.dibujar(canvas, "texto o url", {escala:6, margen:4});
+   ============================================================================ */
+var QR = (function () {
+  "use strict";
+
+  // --- Aritmetica en el campo de Galois GF(256) ---
+  var EXP = new Array(256), LOG = new Array(256);
+  (function () {
+    var x = 1;
+    for (var i = 0; i < 255; i++) { EXP[i] = x; LOG[x] = i; x <<= 1; if (x & 0x100) x ^= 0x11d; }
+    EXP[255] = EXP[0];
+  })();
+  function mul(a, b) { return (a === 0 || b === 0) ? 0 : EXP[(LOG[a] + LOG[b]) % 255]; }
+
+  function polinomioGenerador(grado) {
+    var p = [1];
+    for (var i = 0; i < grado; i++) {
+      var q = p.slice(); q.push(0);
+      for (var j = 0; j < p.length; j++) q[j + 1] ^= mul(p[j], EXP[i]);
+      p = q;
+    }
+    return p;
+  }
+
+  function bytesCorreccion(datos, largoEC) {
+    var gen = polinomioGenerador(largoEC);
+    var res = new Array(datos.length + largoEC).fill(0);
+    for (var i = 0; i < datos.length; i++) res[i] = datos[i];
+    for (i = 0; i < datos.length; i++) {
+      var factor = res[i];
+      if (factor === 0) continue;
+      for (var j = 0; j < gen.length; j++) res[i + j] ^= mul(gen[j], factor);
+    }
+    return res.slice(datos.length);
+  }
+
+  // --- Tablas para nivel de correccion M ---
+  // version: [bytes EC por bloque, [[cantidad de bloques, bytes de datos], ...]]
+  var RS = {
+    1: [10, [[1, 16]]],
+    2: [16, [[1, 28]]],
+    3: [26, [[1, 44]]],
+    4: [18, [[2, 32]]],
+    5: [24, [[2, 43]]],
+    6: [16, [[4, 27]]],
+    7: [18, [[4, 31]]],
+    8: [22, [[2, 38], [2, 39]]],
+    9: [22, [[3, 36], [2, 37]]],
+    10:[26, [[4, 43], [1, 44]]]
+  };
+  var ALINEACION = {
+    1: [], 2: [6, 18], 3: [6, 22], 4: [6, 26], 5: [6, 30],
+    6: [6, 34], 7: [6, 22, 38], 8: [6, 24, 42], 9: [6, 26, 46], 10: [6, 28, 50]
+  };
+  var BITS_SOBRANTES = { 1: 0, 2: 7, 3: 7, 4: 7, 5: 7, 6: 7, 7: 0, 8: 0, 9: 0, 10: 0 };
+  var FORMATO_M = [0x5412, 0x5125, 0x5E7C, 0x5B4B, 0x45F9, 0x40CE, 0x4F97, 0x4AA0];
+  var VERSION_BITS = { 7: 0x07C94, 8: 0x085BC, 9: 0x09A99, 10: 0x0A4D3 };
+
+  function totalDatos(ver) {
+    var t = 0, g = RS[ver][1];
+    for (var i = 0; i < g.length; i++) t += g[i][0] * g[i][1];
+    return t;
+  }
+
+  function aBytes(texto) {
+    if (typeof TextEncoder !== "undefined") return Array.from(new TextEncoder().encode(texto));
+    var out = [], s = unescape(encodeURIComponent(texto));
+    for (var i = 0; i < s.length; i++) out.push(s.charCodeAt(i));
+    return out;
+  }
+
+  function elegirVersion(nBytes) {
+    for (var v = 1; v <= 10; v++) {
+      var bitsCuenta = v < 10 ? 8 : 16;
+      var capacidad = Math.floor((totalDatos(v) * 8 - 4 - bitsCuenta) / 8);
+      if (nBytes <= capacidad) return v;
+    }
+    return null;
+  }
+
+  function construirBits(datos, ver) {
+    var bits = [];
+    function push(valor, n) { for (var i = n - 1; i >= 0; i--) bits.push((valor >> i) & 1); }
+    push(4, 4);                                   // modo byte
+    push(datos.length, ver < 10 ? 8 : 16);        // cuenta de caracteres
+    for (var i = 0; i < datos.length; i++) push(datos[i], 8);
+
+    var capacidadBits = totalDatos(ver) * 8;
+    for (i = 0; i < 4 && bits.length < capacidadBits; i++) bits.push(0); // terminador
+    while (bits.length % 8 !== 0) bits.push(0);                          // relleno a byte
+    var relleno = [0xEC, 0x11], k = 0;
+    while (bits.length < capacidadBits) { push(relleno[k % 2], 8); k++; }
+    return bits;
+  }
+
+  function entrelazar(bits, ver) {
+    var largoEC = RS[ver][0], grupos = RS[ver][1];
+    var bytes = [];
+    for (var i = 0; i < bits.length; i += 8) {
+      var b = 0;
+      for (var j = 0; j < 8; j++) b = (b << 1) | bits[i + j];
+      bytes.push(b);
+    }
+    var bloquesDatos = [], bloquesEC = [], pos = 0;
+    grupos.forEach(function (g) {
+      for (var n = 0; n < g[0]; n++) {
+        var d = bytes.slice(pos, pos + g[1]); pos += g[1];
+        bloquesDatos.push(d);
+        bloquesEC.push(bytesCorreccion(d, largoEC));
+      }
+    });
+    var salida = [], maxD = 0;
+    bloquesDatos.forEach(function (b) { if (b.length > maxD) maxD = b.length; });
+    for (i = 0; i < maxD; i++) bloquesDatos.forEach(function (b) { if (i < b.length) salida.push(b[i]); });
+    for (i = 0; i < largoEC; i++) bloquesEC.forEach(function (b) { salida.push(b[i]); });
+
+    var bitsFinal = [];
+    salida.forEach(function (b) { for (var i2 = 7; i2 >= 0; i2--) bitsFinal.push((b >> i2) & 1); });
+    for (i = 0; i < BITS_SOBRANTES[ver]; i++) bitsFinal.push(0);
+    return bitsFinal;
+  }
+
+  function crearMatriz(ver, bitsFinal) {
+    var tam = 17 + 4 * ver;
+    var m = [], fn = [];
+    for (var r = 0; r < tam; r++) { m.push(new Array(tam).fill(false)); fn.push(new Array(tam).fill(false)); }
+    function set(col, fila, val) { m[fila][col] = val; fn[fila][col] = true; }
+
+    // Patrones localizadores + separadores
+    function localizador(cx, cy) {
+      for (var dy = -4; dy <= 4; dy++) for (var dx = -4; dx <= 4; dx++) {
+        var x = cx + dx, y = cy + dy;
+        if (x < 0 || y < 0 || x >= tam || y >= tam) continue;
+        var d = Math.max(Math.abs(dx), Math.abs(dy));
+        set(x, y, d !== 2 && d !== 4);
+      }
+    }
+    localizador(3, 3); localizador(tam - 4, 3); localizador(3, tam - 4);
+
+    // Temporizadores
+    for (var i = 8; i < tam - 8; i++) { set(i, 6, i % 2 === 0); set(6, i, i % 2 === 0); }
+
+    // Patrones de alineacion
+    var al = ALINEACION[ver];
+    for (var a = 0; a < al.length; a++) for (var b = 0; b < al.length; b++) {
+      if ((a === 0 && b === 0) || (a === 0 && b === al.length - 1) || (a === al.length - 1 && b === 0)) continue;
+      var cx = al[a], cy = al[b];
+      for (var dy2 = -2; dy2 <= 2; dy2++) for (var dx2 = -2; dx2 <= 2; dx2++)
+        set(cx + dx2, cy + dy2, Math.max(Math.abs(dx2), Math.abs(dy2)) !== 1);
+    }
+
+    // Reserva del area de formato (se rellena luego con la mascara elegida)
+    ponerFormato(0);
+    function ponerFormato(mascara) {
+      var bits = FORMATO_M[mascara];
+      function bit(n) { return ((bits >> n) & 1) === 1; }
+      for (var i2 = 0; i2 <= 5; i2++) set(8, i2, bit(i2));
+      set(8, 7, bit(6)); set(8, 8, bit(7)); set(7, 8, bit(8));
+      for (i2 = 9; i2 < 15; i2++) set(14 - i2, 8, bit(i2));
+      for (i2 = 0; i2 < 8; i2++) set(tam - 1 - i2, 8, bit(i2));
+      for (i2 = 8; i2 < 15; i2++) set(8, tam - 15 + i2, bit(i2));
+      set(8, tam - 8, true); // modulo siempre oscuro
+    }
+
+    // Informacion de version (solo v7+)
+    if (ver >= 7) {
+      var vb = VERSION_BITS[ver];
+      for (var i3 = 0; i3 < 18; i3++) {
+        var bv = ((vb >> i3) & 1) === 1;
+        var p = tam - 11 + (i3 % 3), q = Math.floor(i3 / 3);
+        set(p, q, bv); set(q, p, bv);
+      }
+    }
+
+    // Colocacion de los datos en zigzag
+    var idx = 0, dir = -1, fila = tam - 1;
+    for (var col = tam - 1; col > 0; col -= 2) {
+      if (col === 6) col--;
+      while (true) {
+        for (var c = 0; c < 2; c++) {
+          var cc = col - c;
+          if (!fn[fila][cc]) {
+            m[fila][cc] = (idx < bitsFinal.length) ? bitsFinal[idx++] === 1 : false;
+          }
+        }
+        fila += dir;
+        if (fila < 0 || fila >= tam) { fila -= dir; dir = -dir; break; }
+      }
+    }
+
+    // Mascaras
+    var mascaras = [
+      function (r, c) { return (r + c) % 2 === 0; },
+      function (r) { return r % 2 === 0; },
+      function (r, c) { return c % 3 === 0; },
+      function (r, c) { return (r + c) % 3 === 0; },
+      function (r, c) { return (Math.floor(r / 2) + Math.floor(c / 3)) % 2 === 0; },
+      function (r, c) { return ((r * c) % 2) + ((r * c) % 3) === 0; },
+      function (r, c) { return (((r * c) % 2) + ((r * c) % 3)) % 2 === 0; },
+      function (r, c) { return (((r + c) % 2) + ((r * c) % 3)) % 2 === 0; }
+    ];
+    function aplicar(msk) {
+      for (var r = 0; r < tam; r++) for (var c = 0; c < tam; c++)
+        if (!fn[r][c] && mascaras[msk](r, c)) m[r][c] = !m[r][c];
+    }
+    function penalizacion() {
+      var p = 0, r, c, s, oscuros = 0;
+      var filas = [], cols = [];
+      for (r = 0; r < tam; r++) { s = ""; for (c = 0; c < tam; c++) { s += m[r][c] ? "1" : "0"; if (m[r][c]) oscuros++; } filas.push(s); }
+      for (c = 0; c < tam; c++) { s = ""; for (r = 0; r < tam; r++) s += m[r][c] ? "1" : "0"; cols.push(s); }
+      function reglaLinea(lineas) {
+        lineas.forEach(function (l) {
+          var run = 1;
+          for (var i4 = 1; i4 < l.length; i4++) {
+            if (l[i4] === l[i4 - 1]) { run++; } else { if (run >= 5) p += 3 + (run - 5); run = 1; }
+          }
+          if (run >= 5) p += 3 + (run - 5);
+          var pats = ["10111010000", "00001011101"];
+          pats.forEach(function (pt) {
+            var from = 0, k2;
+            while ((k2 = l.indexOf(pt, from)) !== -1) { p += 40; from = k2 + 1; }
+          });
+        });
+      }
+      reglaLinea(filas); reglaLinea(cols);
+      for (r = 0; r < tam - 1; r++) for (c = 0; c < tam - 1; c++) {
+        var v = m[r][c];
+        if (v === m[r][c + 1] && v === m[r + 1][c] && v === m[r + 1][c + 1]) p += 3;
+      }
+      var pct = (oscuros * 100) / (tam * tam);
+      p += Math.floor(Math.abs(pct - 50) / 5) * 10;
+      return p;
+    }
+
+    var mejor = 0, mejorP = Infinity;
+    for (var msk = 0; msk < 8; msk++) {
+      aplicar(msk); ponerFormato(msk);
+      var pen = penalizacion();
+      if (pen < mejorP) { mejorP = pen; mejor = msk; }
+      aplicar(msk); // deshacer
+    }
+    aplicar(mejor); ponerFormato(mejor);
+    return m;
+  }
+
+  function generar(texto) {
+    var datos = aBytes(texto);
+    var ver = elegirVersion(datos.length);
+    if (!ver) throw new Error("Texto demasiado largo para el QR");
+    return crearMatriz(ver, entrelazar(construirBits(datos, ver), ver));
+  }
+
+  function dibujar(canvas, texto, opts) {
+    opts = opts || {};
+    var margen = opts.margen == null ? 4 : opts.margen;
+    var m, tam;
+    try { m = generar(texto); tam = m.length; }
+    catch (e) { console.error(e); return false; }
+    var total = tam + margen * 2;
+    var escala = opts.escala || Math.max(2, Math.floor((opts.px || 240) / total));
+    var lado = total * escala;
+    canvas.width = lado; canvas.height = lado;
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = opts.fondo || "#ffffff";
+    ctx.fillRect(0, 0, lado, lado);
+    ctx.fillStyle = opts.color || "#023e8a";
+    for (var r = 0; r < tam; r++) for (var c = 0; c < tam; c++)
+      if (m[r][c]) ctx.fillRect((c + margen) * escala, (r + margen) * escala, escala, escala);
+    return true;
+  }
+
+  return { generar: generar, dibujar: dibujar };
+})();
+</script>
+
+<script>
+/* ============================================================================
+   2) CONFIGURACION  ·  EDITA SOLO ESTA PARTE
+   ============================================================================ */
+var CONFIG = {
+  homenajeada : "Andrea Teresen Rodríguez",
+  apodo       : "Andrea",
+  edad        : 19,
+
+  // Fecha y hora de la fiesta (formato AAAA-MM-DDTHH:MM:SS, hora local)
+  fechaISO    : "2026-09-20T14:00:00",
+  duracionHrs : 7,
+  fechaTexto  : "Domingo 20 de septiembre",
+  horaTexto   : "2:00 PM en adelante",
+
+  // Ubicacion
+  lugarNombre : "La piscina 🏊 (te esperamos ahí)",
+  coordsTexto : "18°31'05.1\"N 69°51'04.6\"W",
+  lat         : 18.5180833,
+  lng         : -69.8512778,
+
+  // Contacto de la anfitriona (solo numeros, con codigo de pais). Ej: Rep. Dom. = 1809...
+  whatsapp    : "18498781709",
+
+  dressCode   : "Traje de baño + outfit caribeño 🌺",
+  traer       : ["Traje de baño 👙", "Toalla 🩱", "Sandalias 🩴", "Cambio de ropa 👕", "Buena vibra 🤙"],
+  limiteRsvp  : "2026-09-18",              // fecha limite para confirmar (AAAA-MM-DD)
+  limiteTexto : "viernes 18 de septiembre", // como se muestra en la invitacion
+  credito     : "LMSP",                     // firma del pie de pagina
+
+  // Opcional: si publicas la pagina, pon aqui la URL final para generar los links de cada invitado
+  baseUrl     : "",
+  // Opcional: URL de un Google Apps Script (doPost) para recibir las respuestas
+  webhookUrl  : ""
+};
+
+/* ----------------------------------------------------------------------------
+   3) LISTA DE INVITADOS  ·  agrega, quita o edita libremente
+      { nombre: "...", cupos: 2, tel: "18091234567" }
+      - cupos: cuántas personas puede llevar EN TOTAL (incluyéndose)
+      - tel  : opcional, sirve para el botón de WhatsApp del panel
+---------------------------------------------------------------------------- */
+var INVITADOS = [
+  { nombre: "María Pérez",        cupos: 2, tel: "" },
+  { nombre: "Juan Rodríguez",     cupos: 1, tel: "" },
+  { nombre: "Familia Fernández",  cupos: 4, tel: "" },
+  { nombre: "Laura Gómez",        cupos: 2, tel: "" },
+  { nombre: "Carlos Santana",     cupos: 1, tel: "" },
+  { nombre: "Ana Jiménez",        cupos: 2, tel: "" }
+];
+
+/* ============================================================================
+   4) APLICACION  (de aquí para abajo normalmente no hay que tocar nada)
+   ============================================================================ */
+(function () {
+  "use strict";
+
+  var LS_LISTA = "peppa19_lista";
+  var LS_RESP  = "peppa19_respuestas";
+
+  var $  = function (s, ctx) { return (ctx || document).querySelector(s); };
+  var $$ = function (s, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(s)); };
+
+  /* ---------------- utilidades ---------------- */
+  var CON_TILDE = "áàäâãÁÀÄÂÃéèëêÉÈËÊíìïîÍÌÏÎóòöôõÓÒÖÔÕúùüûÚÙÜÛñÑçÇýÝ";
+  var SIN_TILDE = "aaaaaAAAAAeeeeEEEEiiiiIIIIoooooOOOOOuuuuUUUUnNcCyY";
+  function normalizar(t) {
+    t = (t == null ? "" : String(t));
+    if (t.normalize) t = t.normalize("NFC");
+    var salida = "";
+    for (var i = 0; i < t.length; i++) {
+      var p = CON_TILDE.indexOf(t.charAt(i));
+      salida += (p === -1) ? t.charAt(i) : SIN_TILDE.charAt(p);
+    }
+    return salida.toLowerCase().trim();
+  }
+  function slugificar(t) {
+    return normalizar(t).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  }
+  function leer(clave, porDefecto) {
+    try { var v = localStorage.getItem(clave); return v ? JSON.parse(v) : porDefecto; }
+    catch (e) { return porDefecto; }
+  }
+  function guardar(clave, valor) {
+    try { localStorage.setItem(clave, JSON.stringify(valor)); return true; } catch (e) { return false; }
+  }
+  function toast(msg) {
+    var t = $("#toast"); t.textContent = msg; t.classList.add("ver");
+    clearTimeout(toast._t); toast._t = setTimeout(function () { t.classList.remove("ver"); }, 2600);
+  }
+  function copiar(texto) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(texto).then(function () { toast("Copiado ✅"); },
+        function () { copiaManual(texto); });
+    } else { copiaManual(texto); }
+  }
+  function copiaManual(texto) {
+    var ta = document.createElement("textarea");
+    ta.value = texto; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); toast("Copiado ✅"); }
+    catch (e) { toast("No se pudo copiar"); }
+    document.body.removeChild(ta);
+  }
+  function escapar(t) {
+    return (t == null ? "" : String(t)).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function urlBase() {
+    if (CONFIG.baseUrl) return CONFIG.baseUrl.split("?")[0].split("#")[0];
+    return location.href.split("?")[0].split("#")[0];
+  }
+
+  /* ---------------- estado ---------------- */
+  function listaInvitados() {
+    var guardada = leer(LS_LISTA, null);
+    var base = (guardada && guardada.length) ? guardada : INVITADOS;
+    var usados = {};
+    return base.map(function (g, i) {
+      var s = slugificar(g.nombre) || ("invitado-" + (i + 1));
+      if (usados[s]) { s = s + "-" + (++usados[s]); } else { usados[s] = 1; }
+      return {
+        nombre: g.nombre,
+        cupos: Math.max(1, parseInt(g.cupos, 10) || 1),
+        tel: (g.tel || "").replace(/\D/g, ""),
+        slug: s
+      };
+    });
+  }
+  function respuestas() { return leer(LS_RESP, {}); }
+  function guardarRespuesta(slug, datos) {
+    var r = respuestas(); r[slug] = datos; guardar(LS_RESP, r); return r;
+  }
+
+  var LISTA = listaInvitados();
+  var invitadoActual = null;
+  var eleccion = null;
+
+  /* ---------------- fechas ---------------- */
+  var fechaEvento = new Date(CONFIG.fechaISO);
+  function dosDig(n) { return (n < 10 ? "0" : "") + n; }
+  function icsFecha(d) {
+    return d.getFullYear() + dosDig(d.getMonth() + 1) + dosDig(d.getDate()) + "T" +
+           dosDig(d.getHours()) + dosDig(d.getMinutes()) + "00";
+  }
+  function archivoICS() {
+    var fin = new Date(fechaEvento.getTime() + CONFIG.duracionHrs * 3600000);
+    var lineas = [
+      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Cumple " + CONFIG.apodo + "//ES",
+      "BEGIN:VEVENT",
+      "UID:cumple-" + slugificar(CONFIG.homenajeada) + "@invitacion",
+      "DTSTART:" + icsFecha(fechaEvento),
+      "DTEND:" + icsFecha(fin),
+      "SUMMARY:Pool Party Hawaiano - " + CONFIG.apodo + " cumple " + CONFIG.edad,
+      "DESCRIPTION:Pool party hawaiano por el cumpleanos numero " + CONFIG.edad + " de " + CONFIG.homenajeada,
+      "LOCATION:" + CONFIG.lat + "\\, " + CONFIG.lng,
+      "GEO:" + CONFIG.lat + ";" + CONFIG.lng,
+      "END:VEVENT", "END:VCALENDAR"
+    ];
+    return "data:text/calendar;charset=utf-8," + encodeURIComponent(lineas.join("\r\n"));
+  }
+
+  /* ---------------- pintar la invitacion ---------------- */
+  function pintarEvento() {
+    $("#txtNombre").textContent = CONFIG.homenajeada;
+    $("#txtEdad").textContent = CONFIG.edad;
+    $("#pieCredito").textContent = CONFIG.credito;
+    $$(".limite div").forEach(function (d) {
+      d.innerHTML = "Confirma antes del <b>" + escapar(CONFIG.limiteTexto) + "</b>, para poder cuadrar la comida y la bebida. ¡Gracias! 🙌";
+    });
+    $("#txtFecha").textContent = CONFIG.fechaTexto;
+    $("#txtHora").textContent = CONFIG.horaTexto;
+    $("#txtDress").textContent = CONFIG.dressCode;
+    $("#txtLugar").textContent = CONFIG.lugarNombre;
+    $("#txtCoords").textContent = CONFIG.coordsTexto;
+    document.title = "Pool Party Hawaiano · " + CONFIG.apodo + " cumple " + CONFIG.edad;
+
+    $("#chipsTraer").innerHTML = CONFIG.traer.map(function (c) {
+      return '<span class="chip">' + escapar(c) + "</span>";
+    }).join("");
+
+    var q = CONFIG.lat + "," + CONFIG.lng;
+    $("#btnMaps").href = "https://www.google.com/maps?q=" + q;
+    $("#btnWaze").href = "https://waze.com/ul?ll=" + q + "&navigate=yes";
+    $("#linkAyuda").href = "https://wa.me/" + CONFIG.whatsapp;
+    $("#btnAgenda").href = archivoICS();
+
+    QR.dibujar($("#qrUbicacion"), "https://www.google.com/maps?q=" + q, { px: 240, color: "#023e8a" });
+  }
+
+  function cuentaRegresiva() {
+    function tic() {
+      var falta = fechaEvento.getTime() - Date.now();
+      if (falta <= 0) {
+        var fin = fechaEvento.getTime() + CONFIG.duracionHrs * 3600000;
+        $("#regresiva").classList.add("oculto");
+        $("#msgRegresiva").textContent = (Date.now() < fin)
+          ? "🎉 ¡La fiesta es AHORA! Corre que el agua está buena 🌊"
+          : "🥥 Esta fiesta ya pasó… ¡gracias por venir!";
+        return;
+      }
+      var s = Math.floor(falta / 1000);
+      $("#cDias").textContent = Math.floor(s / 86400);
+      $("#cHoras").textContent = dosDig(Math.floor(s / 3600) % 24);
+      $("#cMin").textContent = dosDig(Math.floor(s / 60) % 60);
+      $("#cSeg").textContent = dosDig(s % 60);
+    }
+    tic(); setInterval(tic, 1000);
+  }
+
+  function flotantes() {
+    var emojis = ["🌺", "🍍", "🥥", "🩴", "🦩", "🍹", "🌴", "🐚", "⭐", "🏖️"];
+    var cont = $("#flotantes");
+    for (var i = 0; i < 14; i++) {
+      var e = document.createElement("span");
+      e.className = "flotante";
+      e.textContent = emojis[i % emojis.length];
+      e.style.left = (Math.random() * 96) + "%";
+      e.style.fontSize = (18 + Math.random() * 22) + "px";
+      e.style.animationDuration = (14 + Math.random() * 16) + "s";
+      e.style.animationDelay = (-Math.random() * 20) + "s";
+      cont.appendChild(e);
+    }
+  }
+
+  /* ---------------- buscador de invitados ---------------- */
+  function pintarBuscador(filtro) {
+    var f = normalizar(filtro);
+    var res = respuestas();
+    var items = LISTA.filter(function (g) { return !f || normalizar(g.nombre).indexOf(f) !== -1; });
+    if (!items.length) {
+      $("#listaNombres").innerHTML = '<li style="color:var(--tinta-suave);font-size:.9rem;padding:8px 4px">No encontramos ese nombre 😕</li>';
+      return;
+    }
+    $("#listaNombres").innerHTML = items.slice(0, 60).map(function (g) {
+      var r = res[g.slug];
+      var etiqueta = r ? (r.asiste === "si" ? "✅ confirmado" : "❌ no asiste")
+                       : (g.cupos > 1 ? g.cupos + " cupos" : "1 cupo");
+      return '<li><button type="button" data-slug="' + g.slug + '">' +
+             "<span>" + escapar(g.nombre) + "</span><small>" + etiqueta + "</small></button></li>";
+    }).join("");
+    $$("#listaNombres button").forEach(function (b) {
+      b.addEventListener("click", function () { abrirInvitado(b.dataset.slug, true); });
+    });
+  }
+
+  function buscarPorSlug(slug) {
+    if (!slug) return null;
+    var s = slugificar(slug);
+    return LISTA.filter(function (g) { return g.slug === s; })[0] || null;
+  }
+
+  function abrirInvitado(slug, actualizarUrl) {
+    var g = buscarPorSlug(slug);
+    if (!g) { mostrarPaso("buscar"); return; }
+    invitadoActual = g;
+    if (actualizarUrl) {
+      try { history.replaceState(null, "", urlBase() + "?i=" + g.slug); } catch (e) { }
+    }
+    var r = respuestas()[g.slug];
+    if (r) { mostrarResumen(g, r); return; }
+
+    $("#txtHola").textContent = "¡Hola, " + g.nombre + "! 👋";
+    $("#txtCupos").innerHTML = g.cupos > 1
+      ? "Tu invitación es para <b>" + g.cupos + " personas</b>. Dinos cuántas van."
+      : "Tu invitación es <b>personal</b> (1 persona).";
+    var sel = $("#selCantidad"); sel.innerHTML = "";
+    for (var i = 1; i <= g.cupos; i++) {
+      var o = document.createElement("option");
+      o.value = i; o.textContent = i + (i === 1 ? " persona" : " personas");
+      sel.appendChild(o);
+    }
+    sel.value = g.cupos;
+    eleccion = null;
+    $("#opSi").classList.remove("activo-si");
+    $("#opNo").classList.remove("activo-no");
+    $("#detalleSi").classList.add("oculto");
+    $("#btnEnviar").disabled = true;
+    $("#inpMensaje").value = "";
+    $("#avisoRsvp").classList.add("oculto");
+    mostrarPaso("form");
+  }
+
+  function mostrarPaso(paso) {
+    $("#pasoBuscar").classList.toggle("oculto", paso !== "buscar");
+    $("#pasoForm").classList.toggle("oculto", paso !== "form");
+    $("#pasoListo").classList.toggle("oculto", paso !== "listo");
+  }
+
+  function textoWhatsapp(g, r) {
+    if (r.asiste === "si") {
+      return "¡Hola! Soy " + g.nombre + " 🌺 Confirmo que voy al Pool Party de " + CONFIG.apodo +
+             " el " + CONFIG.fechaTexto + ". Vamos " + r.cantidad + (r.cantidad === 1 ? " persona" : " personas") + "." +
+             (r.mensaje ? " Nota: " + r.mensaje : "");
+    }
+    return "¡Hola! Soy " + g.nombre + ". Lamentablemente no podré ir al Pool Party de " + CONFIG.apodo + " 😢" +
+           (r.mensaje ? " " + r.mensaje : "");
+  }
+
+  function mostrarResumen(g, r, reciente) {
+    var box = $("#resumenRsvp");
+    if (r.asiste === "si") {
+      box.innerHTML = '<div class="aviso aviso-ok"><span>🏝️</span><div><b>' + escapar(g.nombre) +
+        "</b>, tu asistencia está confirmada para <b>" + r.cantidad +
+        (r.cantidad === 1 ? " persona" : " personas") + "</b>.<br>Nos vemos el " +
+        escapar(CONFIG.fechaTexto) + " — ¡no olvides el traje de baño! 👙</div></div>";
+    } else {
+      box.innerHTML = '<div class="aviso aviso-no"><span>💔</span><div><b>' + escapar(g.nombre) +
+        "</b>, registramos que no podrás acompañarnos. ¡Te vamos a extrañar!</div></div>";
+    }
+    if (r.mensaje) {
+      box.innerHTML += '<p style="margin:10px 0 0;font-size:.88rem;color:var(--tinta-suave)">Tu mensaje: <i>“' +
+        escapar(r.mensaje) + '”</i></p>';
+    }
+    if (reciente) {
+      box.innerHTML += '<div class="aviso aviso-info"><span>👇</span><div>Último paso: toca <b>“Avisar por WhatsApp”</b> ' +
+        "y envía el mensaje para que " + escapar(CONFIG.apodo) + " reciba tu respuesta.</div></div>";
+    }
+    $("#btnWhats").href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(textoWhatsapp(g, r));
+    $("#btnAgenda").classList.toggle("oculto", r.asiste !== "si");
+    mostrarPaso("listo");
+  }
+
+  function enviarWebhook(datos) {
+    if (!CONFIG.webhookUrl) return;
+    try {
+      fetch(CONFIG.webhookUrl, {
+        method: "POST", mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(datos)
+      }).catch(function () { });
+    } catch (e) { }
+  }
+
+  function conectarRsvp() {
+    $("#inpBuscar").addEventListener("input", function () { pintarBuscador(this.value); });
+
+    function elegir(valor) {
+      eleccion = valor;
+      $("#opSi").classList.toggle("activo-si", valor === "si");
+      $("#opNo").classList.toggle("activo-no", valor === "no");
+      $("#detalleSi").classList.toggle("oculto", valor !== "si" || invitadoActual.cupos < 2);
+      $("#btnEnviar").disabled = false;
+    }
+    $("#opSi").addEventListener("click", function () { elegir("si"); });
+    $("#opNo").addEventListener("click", function () { elegir("no"); });
+
+    $("#btnEnviar").addEventListener("click", function () {
+      if (!invitadoActual || !eleccion) return;
+      var datos = {
+        slug: invitadoActual.slug,
+        nombre: invitadoActual.nombre,
+        asiste: eleccion,
+        cantidad: eleccion === "si" ? (parseInt($("#selCantidad").value, 10) || 1) : 0,
+        mensaje: $("#inpMensaje").value.trim(),
+        fecha: new Date().toISOString()
+      };
+      guardarRespuesta(invitadoActual.slug, datos);
+      enviarWebhook(datos);
+      mostrarResumen(invitadoActual, datos, true);
+      toast(eleccion === "si" ? "¡Confirmado! 🎉" : "Respuesta registrada");
+    });
+
+    $("#btnOtro").addEventListener("click", function () {
+      invitadoActual = null;
+      try { history.replaceState(null, "", urlBase()); } catch (e) { }
+      $("#inpBuscar").value = ""; pintarBuscador("");
+      mostrarPaso("buscar");
+    });
+    $("#btnCambiar").addEventListener("click", function () {
+      if (!invitadoActual) return mostrarPaso("buscar");
+      var r = respuestas(); delete r[invitadoActual.slug]; guardar(LS_RESP, r);
+      abrirInvitado(invitadoActual.slug, false);
+    });
+  }
+
+  /* ---------------- panel del anfitrion ---------------- */
+  function linkDe(g) { return urlBase() + "?i=" + g.slug; }
+
+  function textoInvitacion(g) {
+    return "🌺 ¡Hola " + g.nombre + "! Estás invitad@ al POOL PARTY HAWAIANO por los " +
+      CONFIG.edad + " años de " + CONFIG.apodo + " 🏝️\n" +
+      "📅 " + CONFIG.fechaTexto + " · " + CONFIG.horaTexto + "\n" +
+      "👙 Dress code: " + CONFIG.dressCode + "\n" +
+      "⏳ Confirma antes del " + CONFIG.limiteTexto + "\n" +
+      "Confirma aquí 👉 " + linkDe(g);
+  }
+
+  function pintarMetricas() {
+    var res = respuestas();
+    var conf = 0, personas = 0, no = 0;
+    LISTA.forEach(function (g) {
+      var r = res[g.slug];
+      if (!r) return;
+      if (r.asiste === "si") { conf++; personas += (r.cantidad || 1); } else { no++; }
+    });
+    var cupos = LISTA.reduce(function (a, g) { return a + g.cupos; }, 0);
+    var m = [
+      [LISTA.length, "Invitaciones"],
+      [cupos, "Cupos totales"],
+      [conf, "Confirmaron"],
+      [personas, "Personas van"],
+      [no, "No asisten"],
+      [LISTA.length - conf - no, "Sin responder"]
+    ];
+    $("#metricas").innerHTML = m.map(function (x) {
+      return '<div class="metrica"><b>' + x[0] + "</b><span>" + x[1] + "</span></div>";
+    }).join("");
+  }
+
+  function pintarTabla() {
+    var res = respuestas();
+    $("#tbodyInvitados").innerHTML = LISTA.map(function (g, i) {
+      var r = res[g.slug];
+      var estado = !r ? '<span class="pill pill-pend">pendiente</span>'
+        : (r.asiste === "si" ? '<span class="pill pill-si">va</span>' : '<span class="pill pill-no">no va</span>');
+      var wa = g.tel
+        ? '<button class="mini" data-acc="wa" data-slug="' + g.slug + '">WhatsApp</button>'
+        : '<button class="mini" data-acc="txt" data-slug="' + g.slug + '">Texto</button>';
+      return "<tr>" +
+        "<td>" + (i + 1) + "</td>" +
+        "<td><b>" + escapar(g.nombre) + "</b><br><small style='color:var(--tinta-suave)'>" + g.slug + "</small></td>" +
+        "<td>" + g.cupos + "</td>" +
+        "<td>" + estado + "</td>" +
+        "<td>" + (r && r.asiste === "si" ? r.cantidad : "—") + "</td>" +
+        "<td style='max-width:190px'>" + escapar(r && r.mensaje ? r.mensaje : "") + "</td>" +
+        '<td><div class="acciones">' +
+          '<button class="mini" data-acc="link" data-slug="' + g.slug + '">Link</button>' +
+          wa +
+          '<button class="mini" data-acc="qr" data-slug="' + g.slug + '">QR</button>' +
+          '<button class="mini" data-acc="si" data-slug="' + g.slug + '">✔</button>' +
+          '<button class="mini" data-acc="no" data-slug="' + g.slug + '">✘</button>' +
+          '<button class="mini" data-acc="reset" data-slug="' + g.slug + '">↺</button>' +
+        "</div></td></tr>";
+    }).join("");
+
+    $$("#tbodyInvitados .mini").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var g = buscarPorSlug(b.dataset.slug); if (!g) return;
+        var acc = b.dataset.acc, r = respuestas();
+        if (acc === "link") { copiar(linkDe(g)); }
+        else if (acc === "txt") { copiar(textoInvitacion(g)); }
+        else if (acc === "wa") {
+          window.open("https://wa.me/" + g.tel + "?text=" + encodeURIComponent(textoInvitacion(g)), "_blank");
+        }
+        else if (acc === "qr") { modalQR(g); }
+        else if (acc === "si" || acc === "no") {
+          guardarRespuesta(g.slug, {
+            slug: g.slug, nombre: g.nombre, asiste: acc,
+            cantidad: acc === "si" ? ((r[g.slug] && r[g.slug].cantidad) || g.cupos) : 0,
+            mensaje: (r[g.slug] && r[g.slug].mensaje) || "(marcado por el anfitrión)",
+            fecha: new Date().toISOString()
+          });
+          pintarPanel(); toast("Actualizado");
+        }
+        else if (acc === "reset") { delete r[g.slug]; guardar(LS_RESP, r); pintarPanel(); toast("Respuesta borrada"); }
+      });
+    });
+  }
+
+  function modalQR(g) {
+    var url = g ? linkDe(g) : urlBase();
+    var titulo = g ? g.nombre : "Invitación general";
+    var cont = $("#contModal");
+    cont.innerHTML =
+      '<div class="modal" id="modalQR"><div class="modal-caja">' +
+      "<h3>" + escapar(titulo) + "</h3>" +
+      '<p style="font-size:.82rem;color:var(--tinta-suave);margin:0;word-break:break-all">' + escapar(url) + "</p>" +
+      '<canvas id="qrModal"></canvas>' +
+      '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">' +
+      '<button class="btn btn-mar btn-chico" id="qrDescargar">⬇️ Descargar PNG</button>' +
+      '<button class="btn btn-fantasma btn-chico" id="qrCerrar">Cerrar</button>' +
+      "</div></div></div>";
+    var lienzo = $("#qrModal");
+    if (!QR.dibujar(lienzo, url, { px: 320 })) toast("Ese enlace es muy largo para el QR");
+    $("#qrCerrar").addEventListener("click", function () { cont.innerHTML = ""; });
+    $("#modalQR").addEventListener("click", function (e) { if (e.target.id === "modalQR") cont.innerHTML = ""; });
+    $("#qrDescargar").addEventListener("click", function () {
+      var a = document.createElement("a");
+      a.download = "qr-" + (g ? g.slug : "invitacion") + ".png";
+      a.href = lienzo.toDataURL("image/png");
+      a.click();
+    });
+  }
+
+  function pintarEditor() {
+    var txt = LISTA.map(function (g) {
+      return g.nombre + " , " + g.cupos + (g.tel ? " , " + g.tel : "");
+    }).join("\n");
+    $("#txtLista").value = txt;
+  }
+
+  function pintarConfig() {
+    var filas = [
+      ["Homenajeada", CONFIG.homenajeada], ["Edad", CONFIG.edad],
+      ["Fecha", CONFIG.fechaTexto + " (" + CONFIG.fechaISO + ")"], ["Hora", CONFIG.horaTexto],
+      ["Lugar", CONFIG.lugarNombre], ["Coordenadas", CONFIG.coordsTexto],
+      ["Google Maps", CONFIG.lat + ", " + CONFIG.lng],
+      ["WhatsApp anfitriona", CONFIG.whatsapp], ["Dress code", CONFIG.dressCode],
+      ["Límite para confirmar", CONFIG.limiteTexto + " (" + CONFIG.limiteRsvp + ")"],
+      ["Firma del pie", CONFIG.credito],
+      ["URL base", CONFIG.baseUrl || urlBase()],
+      ["Webhook", CONFIG.webhookUrl || "(sin configurar)"]
+    ];
+    $("#tbodyConfig").innerHTML = filas.map(function (f) {
+      return "<tr><th style='width:200px'>" + escapar(f[0]) + "</th><td>" + escapar(f[1]) + "</td></tr>";
+    }).join("");
+  }
+
+  function pintarPanel() { pintarMetricas(); pintarTabla(); pintarEditor(); pintarConfig(); }
+
+  function descargar(nombre, contenido, tipo) {
+    var blob = new Blob([contenido], { type: tipo || "text/plain;charset=utf-8" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = nombre;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 3000);
+  }
+
+  function conectarPanel() {
+    $$(".tab").forEach(function (t) {
+      t.addEventListener("click", function () {
+        $$(".tab").forEach(function (x) { x.classList.remove("on"); });
+        t.classList.add("on");
+        ["resumen", "lista", "editar", "ajustes"].forEach(function (n) {
+          $("#tab" + n.charAt(0).toUpperCase() + n.slice(1)).classList.toggle("oculto", n !== t.dataset.tab);
+        });
+      });
+    });
+
+    $("#btnCsv").addEventListener("click", function () {
+      var res = respuestas();
+      var filas = [["Nombre", "Cupos", "Estado", "Personas", "Mensaje", "Respondio"]];
+      LISTA.forEach(function (g) {
+        var r = res[g.slug];
+        filas.push([g.nombre, g.cupos,
+          r ? (r.asiste === "si" ? "VA" : "NO VA") : "PENDIENTE",
+          r && r.asiste === "si" ? r.cantidad : 0,
+          (r && r.mensaje) || "", (r && r.fecha) || ""]);
+      });
+      var csv = filas.map(function (f) {
+        return f.map(function (c) { return '"' + String(c).split('"').join('""') + '"'; }).join(",");
+      }).join("\r\n");
+      descargar("confirmaciones-" + slugificar(CONFIG.apodo) + ".csv", "﻿" + csv, "text/csv;charset=utf-8");
+    });
+
+    $("#btnCopiarTodos").addEventListener("click", function () {
+      copiar(LISTA.map(function (g) { return g.nombre + ": " + linkDe(g); }).join("\n"));
+    });
+    $("#btnQrGeneral").addEventListener("click", function () { modalQR(null); });
+    $("#btnBorrarResp").addEventListener("click", function () {
+      if (!confirm("¿Borrar TODAS las respuestas guardadas en este navegador?")) return;
+      guardar(LS_RESP, {}); pintarPanel(); toast("Respuestas borradas");
+    });
+
+    $("#btnGuardarLista").addEventListener("click", function () {
+      var nueva = $("#txtLista").value.split("\n").map(function (l) {
+        var p = l.split(",");
+        var nombre = (p[0] || "").trim();
+        if (!nombre) return null;
+        return { nombre: nombre, cupos: parseInt((p[1] || "1").trim(), 10) || 1, tel: (p[2] || "").trim() };
+      }).filter(Boolean);
+      if (!nueva.length) { toast("La lista está vacía"); return; }
+      guardar(LS_LISTA, nueva);
+      LISTA = listaInvitados();
+      pintarPanel(); pintarBuscador($("#inpBuscar").value);
+      toast("Lista guardada (" + nueva.length + " invitados)");
+    });
+
+    $("#btnCodigo").addEventListener("click", function () {
+      var cuerpo = LISTA.map(function (g) {
+        return '  { nombre: "' + g.nombre.split('"').join("'") + '", cupos: ' + g.cupos + ', tel: "' + g.tel + '" }';
+      }).join(",\n");
+      copiar("var INVITADOS = [\n" + cuerpo + "\n];");
+    });
+
+    $("#btnRestaurar").addEventListener("click", function () {
+      if (!confirm("¿Volver a la lista que está escrita en el archivo index.html?")) return;
+      try { localStorage.removeItem(LS_LISTA); } catch (e) { }
+      LISTA = listaInvitados();
+      pintarPanel(); pintarBuscador(""); toast("Lista restaurada");
+    });
+
+    var lp = $("#linkPanel");
+    if (lp) lp.addEventListener("click", function (e) { e.preventDefault(); vista("panel"); });
+    $("#linkVolver").addEventListener("click", function (e) { e.preventDefault(); vista("invitacion"); });
+  }
+
+  function vista(cual) {
+    var esPanel = cual === "panel";
+    $("#vistaPanel").classList.toggle("oculto", !esPanel);
+    $("#vistaInvitacion").classList.toggle("oculto", esPanel);
+    if (esPanel) pintarPanel();
+    try {
+      history.replaceState(null, "", esPanel ? urlBase() + "?panel=1" : urlBase());
+    } catch (e) { }
+    window.scrollTo(0, 0);
+  }
+
+  /* ---------------- arranque ---------------- */
+  function arrancar() {
+    pintarEvento();
+    cuentaRegresiva();
+    flotantes();
+    conectarRsvp();
+    conectarPanel();
+
+    var params = new URLSearchParams(location.search.replace(/^\?/, ""));
+    var hash = location.hash.replace("#", "");
+    if (params.get("panel") || hash === "panel") { vista("panel"); pintarBuscador(""); return; }
+
+    var quien = params.get("i") || params.get("invitado") || (hash && hash !== "panel" ? hash : "");
+    pintarBuscador("");
+    if (quien) abrirInvitado(quien, false); else mostrarPaso("buscar");
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", arrancar);
+  else arrancar();
+})();
+</script>
+</body>
+</html>
