@@ -437,12 +437,10 @@ tr:last-child td{border-bottom:none;}
     <!-- Resumen -->
     <div id="tabResumen">
       <div class="metricas" id="metricas"></div>
-      <div class="nota">
-        Las respuestas se guardan en <b>este navegador</b> y además te llegan por WhatsApp.
-        Si configuras un <code>webhookUrl</code> (Google Apps Script) en el código, también se envían allá.
-        Usa <b>Exportar CSV</b> para respaldar.
-      </div>
+      <div class="nota" id="notaSync">Las respuestas se guardan en este navegador y te llegan por WhatsApp.</div>
       <div class="fila-btn">
+        <button class="btn btn-hoja btn-chico oculto" id="btnSync">🔄 Sincronizar con la hoja</button>
+        <a class="btn btn-fantasma btn-chico oculto" id="btnHoja" href="#" target="_blank" rel="noopener">📗 Abrir la hoja</a>
         <button class="btn btn-mar btn-chico" id="btnCsv">⬇️ Exportar CSV</button>
         <button class="btn btn-fantasma btn-chico" id="btnCopiarTodos">🔗 Copiar todos los links</button>
         <button class="btn btn-fantasma btn-chico" id="btnQrGeneral">📷 QR de la invitación</button>
@@ -807,8 +805,10 @@ var CONFIG = {
 
   // Opcional: si publicas la pagina, pon aqui la URL final para generar los links de cada invitado
   baseUrl     : "https://lmsp13.github.io/cumple-andrea/",
-  // Opcional: URL de un Google Apps Script (doPost) para recibir las respuestas
-  webhookUrl  : ""
+  // Google Sheets: pega aqui la URL que te da Apps Script al implementar (termina en /exec)
+  webhookUrl  : "https://script.google.com/macros/s/AKfycbwPPx0tcdGnJbWwFuJGFafiIPG7F7FK-C1VrsxdFl6XJOLCKxbDq-wX0F48Jkl2IbR4/exec",
+  // Opcional: link de la hoja de calculo, para el boton "Abrir la hoja" del panel
+  hojaUrl     : ""
 };
 
 /* ----------------------------------------------------------------------------
@@ -818,8 +818,8 @@ var CONFIG = {
       - tel  : opcional, sirve para el botón de WhatsApp del panel
 ---------------------------------------------------------------------------- */
 var INVITADOS = [
-  { nombre: "Belkis Yudelis",        cupos: 6, tel: "" },
-  { nombre: "Damayra Nova/Domingo",  cupos: 2, tel: "" },
+  { nombre: "Belkis Abreu",          cupos: 6, tel: "" },
+  { nombre: "Domingo Rodriguez/Damayra Nova", cupos: 2, tel: "" },
   { nombre: "Jeaneris Rodriguez",    cupos: 2, tel: "" },
   { nombre: "David Guzman",          cupos: 1, tel: "" },
   { nombre: "Edinson Diaz",          cupos: 1, tel: "" },
@@ -1114,15 +1114,53 @@ var INVITADOS = [
     mostrarPaso("listo");
   }
 
+  // Manda la respuesta a la hoja de Google (si hay webhookUrl configurada).
+  // Usa sendBeacon primero porque sobrevive aunque el invitado cierre la pagina enseguida.
   function enviarWebhook(datos) {
     if (!CONFIG.webhookUrl) return;
+    var cuerpo = JSON.stringify(datos);
+    try {
+      if (navigator.sendBeacon) {
+        var blob = new Blob([cuerpo], { type: "text/plain;charset=utf-8" });
+        if (navigator.sendBeacon(CONFIG.webhookUrl, blob)) return;
+      }
+    } catch (e) { }
     try {
       fetch(CONFIG.webhookUrl, {
-        method: "POST", mode: "no-cors",
+        method: "POST", mode: "no-cors", keepalive: true,
         headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify(datos)
+        body: cuerpo
       }).catch(function () { });
-    } catch (e) { }
+    } catch (e2) { }
+  }
+
+  // Lee la hoja y actualiza el panel. La hoja manda sobre lo guardado en el navegador.
+  function sincronizar(silencioso) {
+    var btn = $("#btnSync"), nota = $("#notaSync");
+    if (!CONFIG.webhookUrl) return;
+    if (btn) { btn.disabled = true; btn.textContent = "⏳ Leyendo la hoja..."; }
+    var sep = CONFIG.webhookUrl.indexOf("?") === -1 ? "?" : "&";
+    fetch(CONFIG.webhookUrl + sep + "accion=leer&t=" + Date.now())
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d || !d.ok || !d.respuestas) throw new Error("respuesta invalida");
+        var locales = respuestas(), n = 0;
+        Object.keys(d.respuestas).forEach(function (s) { locales[s] = d.respuestas[s]; n++; });
+        guardar(LS_RESP, locales);
+        pintarPanel();
+        if (nota) nota.innerHTML = "✅ Sincronizado con la hoja de Google: <b>" + n +
+          "</b> respuesta(s) registradas. Vuelve a sincronizar cuando quieras.";
+        if (!silencioso) toast("Sincronizado ✅");
+      })
+      .catch(function () {
+        if (nota) nota.innerHTML = "⚠️ No se pudo leer la hoja. Revisa que la URL del webhook termine en " +
+          "<code>/exec</code> y que la implementación tenga acceso para <b>cualquier persona</b>. " +
+          "Mientras tanto, las respuestas siguen guardándose en la hoja y te llegan por WhatsApp.";
+        if (!silencioso) toast("No se pudo leer la hoja");
+      })
+      .then(function () {
+        if (btn) { btn.disabled = false; btn.textContent = "🔄 Sincronizar con la hoja"; }
+      });
   }
 
   function conectarRsvp() {
@@ -1238,12 +1276,14 @@ var INVITADOS = [
         }
         else if (acc === "qr") { modalQR(g); }
         else if (acc === "si" || acc === "no") {
-          guardarRespuesta(g.slug, {
+          var manual = {
             slug: g.slug, nombre: g.nombre, asiste: acc,
             cantidad: acc === "si" ? ((r[g.slug] && r[g.slug].cantidad) || g.cupos) : 0,
             mensaje: (r[g.slug] && r[g.slug].mensaje) || "(marcado por el anfitrión)",
             fecha: new Date().toISOString()
-          });
+          };
+          guardarRespuesta(g.slug, manual);
+          enviarWebhook(manual);          // que la hoja tambien se entere
           pintarPanel(); toast("Actualizado");
         }
         else if (acc === "reset") { delete r[g.slug]; guardar(LS_RESP, r); pintarPanel(); toast("Respuesta borrada"); }
@@ -1374,6 +1414,19 @@ var INVITADOS = [
       pintarPanel(); pintarBuscador(""); toast("Lista restaurada");
     });
 
+    $("#btnSync").addEventListener("click", function () { sincronizar(false); });
+
+    var nota = $("#notaSync"), btnHoja = $("#btnHoja");
+    if (CONFIG.webhookUrl) {
+      $("#btnSync").classList.remove("oculto");
+      nota.innerHTML = "Conectado a una <b>hoja de Google</b>: las confirmaciones se registran solas. " +
+        "Pulsa <b>Sincronizar</b> para traer las últimas al panel.";
+    } else {
+      nota.innerHTML = "Las respuestas se guardan en <b>este navegador</b> y te llegan por WhatsApp. " +
+        "Para que se registren solas, configura <code>webhookUrl</code> en el código.";
+    }
+    if (CONFIG.hojaUrl) { btnHoja.href = CONFIG.hojaUrl; btnHoja.classList.remove("oculto"); }
+
     var lp = $("#linkPanel");
     if (lp) lp.addEventListener("click", function (e) { e.preventDefault(); vista("panel"); });
     $("#linkVolver").addEventListener("click", function (e) { e.preventDefault(); vista("invitacion"); });
@@ -1383,7 +1436,7 @@ var INVITADOS = [
     var esPanel = cual === "panel";
     $("#vistaPanel").classList.toggle("oculto", !esPanel);
     $("#vistaInvitacion").classList.toggle("oculto", esPanel);
-    if (esPanel) pintarPanel();
+    if (esPanel) { pintarPanel(); if (CONFIG.webhookUrl) sincronizar(true); }
     try {
       history.replaceState(null, "", esPanel ? urlBase() + "?panel=1" : urlBase());
     } catch (e) { }
